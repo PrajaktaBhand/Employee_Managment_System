@@ -1,0 +1,23 @@
+<div class="container">
+<mat-toolbar color="primary" class="navbar">
+  <mat-toolbar-row>
+    <button class="" mat-icon-button (click)="emsNav.toggle()"><mat-icon>menu</mat-icon> </button>
+    <mat-label >EMS</mat-label>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidebar">
+  <mat-sidenav #emsNav mode="over" class="">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['dashboard']" routerLinkActive="router-link-active" ><mat-icon>home</mat-icon> <mat-label>Dashboard</mat-label></a>
+      <a mat-list-item [routerLink]="['employees']" routerLinkActive="router-link-active" ><mat-icon>people</mat-icon> <mat-label>Employees</mat-label></a>
+      <a mat-list-item [routerLink]="['leave-calendar']" routerLinkActive="router-link-active" ><mat-icon>today</mat-icon> <mat-label>Leave Calendar</mat-label></a>
+      <a mat-list-item [routerLink]="['leave-request']" routerLinkActive="router-link-active" ><mat-icon>people</mat-icon> <mat-label>Apply Leave</mat-label></a>
+      <a mat-list-item><mat-icon>people</mat-icon> <mat-label>My Leaves</mat-label></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
